@@ -16,17 +16,13 @@ and make the consequential choices transparent.
 
 ## Groups
 
-Work only in your assigned folder:
-
-- `groups/amber/`
-- `groups/blue/`
-- `groups/coral/`
-- `groups/green/`
-- `groups/purple/`
-- `groups/silver/`
-- `groups/teal/`
-
-Do not modify another group's files.
+- ![Amber](assets/group-badges/amber.svg)
+- ![Blue](assets/group-badges/blue.svg)
+- ![Coral](assets/group-badges/coral.svg)
+- ![Green](assets/group-badges/green.svg)
+- ![Purple](assets/group-badges/purple.svg)
+- ![Silver](assets/group-badges/silver.svg)
+- ![Teal](assets/group-badges/teal.svg)
 
 ## Input
 
@@ -95,9 +91,10 @@ and choices made by the group.
 Before submitting, confirm that your folder contains only the completed
 `results.csv`, `analysis.md`, and `evaluation.md` files.
 
-If using Git, commit and push only your group's three files. If using a shared
-upload folder, replace the templates in your assigned folder with the completed
-versions. Submit before the break so the seven result files can be combined
+One group member should email the three completed files as attachments. Use
+your group color as the email subject line (for example, `amber`). Keep the
+filenames unchanged so the files can be saved directly into the corresponding
+group folder. Submit before the break so the seven result files can be combined
 while participants are away.
 
 ## Success criteria
