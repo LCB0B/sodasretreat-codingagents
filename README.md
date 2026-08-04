@@ -30,9 +30,11 @@ Do not modify another group's files.
 
 ## Input
 
-The common corpus will be provided as `corpus.csv` in this directory. Treat
-the supplied corpus and its time period as fixed. Do not retrieve or substitute
-a different version of the speeches.
+The common corpus is provided as `corpus.csv` in this directory. It contains
+one document for every year from 1946 through 2020, with columns for year,
+president, party, document type, and full text. Treat the supplied corpus and
+its time period as fixed. Do not retrieve or substitute a different version of
+the speeches. See `DATA.md` for sources and document-selection rules.
 
 ## Task
 
@@ -127,4 +129,3 @@ A successful submission:
   examining the underlying text.
 - **A malformed submission:** years are missing, estimates fall outside
   0--1, or the CSV contains additional columns.
-
