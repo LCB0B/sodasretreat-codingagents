@@ -2,7 +2,7 @@
 
 ## Definition
 
-What counted as attention to climate change?
+What counted as attention to energy?
 
 ## Measurement
 

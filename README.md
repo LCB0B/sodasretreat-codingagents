@@ -1,8 +1,8 @@
-# SODAS Retreat Exercise: Measuring Climate Attention
+# SODAS Retreat Exercise: Measuring Attention to Energy
 
 ## Research question
 
-> How has presidential attention to climate change evolved in State of the
+> How has presidential attention to energy evolved in State of the
 > Union addresses since 1946?
 
 Seven groups will use the same English-language speech corpus and a coding
@@ -39,22 +39,23 @@ the speeches. See `DATA.md` for sources and document-selection rules.
 ## Task
 
 Use a coding agent to construct an annual measure of the share of each speech
-devoted to climate change. Your group decides:
+devoted to energy. Your group decides:
 
-- what counts as attention to climate change;
+- what counts as attention to energy;
 - how the text should be preprocessed;
 - whether to use a dictionary, classification, or another transparent method;
 - how to handle indirect or historically changing terminology; and
 - how to validate the resulting measure.
 
-Historical speeches may discuss relevant phenomena without using contemporary
-terms such as *climate change*. Conversely, words such as *climate*, *green*,
-or *energy* may appear in unrelated contexts. Treat these as measurement
-problems rather than merely technical problems.
+Energy may be discussed as a matter of supply, prices, national security,
+industrial policy, conservation, or environmental transition. References to
+oil, gas, coal, nuclear power, electricity, or renewable energy may therefore
+fall inside or outside the concept depending on the group's definition. Treat
+these choices as measurement problems rather than merely technical problems.
 
 ## Required outputs
 
-Submit exactly two files in your group folder. Templates are already present.
+Submit exactly three files in your group folder. Templates are already present.
 
 ### `results.csv`
 
@@ -82,26 +83,19 @@ enough information for the other groups to understand what produced your
 estimates. Include the important instructions given to the coding agent and
 describe where group members intervened.
 
-## Suggested workflow (50 minutes)
+### `evaluation.md`
 
-1. **Define the concept (10 minutes).** Agree on what should and should not
-   count as climate attention.
-2. **Build the measure (20 minutes).** Ask the agent to implement and apply the
-   approach to the complete corpus.
-3. **Validate it (10 minutes).** Inspect positive cases, false positives,
-   apparent false negatives, and unusual years.
-4. **Finalize the outputs (10 minutes).** Check the CSV schema and complete the
-   analytical note.
-
-A simple, inspected measure is preferable to an elaborate method that the
-group does not have time to validate.
+Reflect on the advantages and disadvantages of using a coding agent for this
+task. Complete all sections of the supplied template and distinguish, where
+possible, between limitations of the agent, limitations of the chosen method,
+and choices made by the group.
 
 ## Submission
 
 Before submitting, confirm that your folder contains only the completed
-`results.csv` and `analysis.md` files.
+`results.csv`, `analysis.md`, and `evaluation.md` files.
 
-If using Git, commit and push only your group's two files. If using a shared
+If using Git, commit and push only your group's three files. If using a shared
 upload folder, replace the templates in your assigned folder with the completed
 versions. Submit before the break so the seven result files can be combined
 while participants are away.
@@ -115,14 +109,15 @@ A successful submission:
 - follows the required file format;
 - explains the group's analytical choices;
 - reports at least one substantive validation check; and
-- acknowledges important limitations.
+- acknowledges important limitations; and
+- reflects on the advantages and disadvantages of using a coding agent.
 
 ## Common failure modes
 
-- **An overly broad measure:** generic references to energy, nature, weather,
-  or the environment are counted as climate attention.
-- **An overly narrow measure:** only the exact phrase *climate change* is
-  counted, missing older or indirect language.
+- **An overly broad measure:** generic references to prices, industry,
+  technology, or national security are counted as energy attention.
+- **An overly narrow measure:** only the exact word *energy* is counted,
+  missing references to particular fuels, electricity, or conservation.
 - **An inconsistent denominator:** the measure changes from word share to
   sentence share across years.
 - **Uninspected output:** plausible-looking estimates are accepted without
