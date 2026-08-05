@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="88" height="24" role="img" aria-label="Coral">
-  <rect width="88" height="24" rx="6" fill="#E76F51"/>
-  <text x="44" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#111111">Coral</text>
+  <title>Coral</title>
+  <rect x="0.75" y="0.75" width="86.5" height="22.5" rx="6" fill="#FFE9E6" stroke="#F0645A" stroke-width="1.5"/>
+  <text x="44" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#9E332D">Coral</text>
 </svg>

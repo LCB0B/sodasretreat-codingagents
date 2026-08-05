@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="88" height="24" role="img" aria-label="Silver">
-  <rect width="88" height="24" rx="6" fill="#B7BBC1"/>
-  <text x="44" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#111111">Silver</text>
+  <title>Silver</title>
+  <rect x="0.75" y="0.75" width="86.5" height="22.5" rx="6" fill="#F1F3F6" stroke="#9CA3AF" stroke-width="1.5"/>
+  <text x="44" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#4F5661">Silver</text>
 </svg>

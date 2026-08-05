@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="88" height="24" role="img" aria-label="Blue">
-  <rect width="88" height="24" rx="6" fill="#0072B2"/>
-  <text x="44" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">Blue</text>
+  <title>Blue</title>
+  <rect x="0.75" y="0.75" width="86.5" height="22.5" rx="6" fill="#EAF2FF" stroke="#3478E5" stroke-width="1.5"/>
+  <text x="44" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#174A99">Blue</text>
 </svg>

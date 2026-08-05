@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="88" height="24" role="img" aria-label="Teal">
-  <rect width="88" height="24" rx="6" fill="#008C95"/>
-  <text x="44" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">Teal</text>
+  <title>Teal</title>
+  <rect x="0.75" y="0.75" width="86.5" height="22.5" rx="6" fill="#E2F8F7" stroke="#00A6A6" stroke-width="1.5"/>
+  <text x="44" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#005F63">Teal</text>
 </svg>
