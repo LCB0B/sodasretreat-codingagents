@@ -1,4 +1,4 @@
-# Amber: Analytical Approach
+# Black: Analytical Approach
 
 ## Definition
 

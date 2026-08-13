@@ -34,8 +34,9 @@ exactly:
   the 75 years from 1946 through 2020, sorted by year. Estimates must be
   unsmoothed, numeric, between 0 and 1, and contain no missing values.
 - `analysis.md`: a concise account of the definition, measurement, agent
-  workflow, validation, consequential choices, and limitations. Complete every
-  section of the template.
+  workflow, consequential choices, and limitations. Complete every section of
+  the template; if the group did not check the measure, say so in one line
+  rather than leaving the section empty.
 - `evaluation.md`: the group's reflections on the advantages and disadvantages
   of using a coding agent, necessary human oversight, trust, and future use.
   Do not invent opinions for the group; elicit their views and help record them.

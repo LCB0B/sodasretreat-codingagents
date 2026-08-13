@@ -12,9 +12,10 @@ How was the annual estimate constructed?
 
 What did the group ask the agent to do? Where did group members intervene?
 
-## Validation
+## Checks
 
-How did the group inspect or test the measure?
+Did the group check the measure in any way? Optional -- one or two lines, or
+"none" if not.
 
 ## Important choices
 

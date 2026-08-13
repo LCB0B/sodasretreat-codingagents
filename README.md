@@ -41,13 +41,19 @@ devoted to energy. Your group decides:
 - how the text should be preprocessed;
 - whether to use a dictionary, classification, or another transparent method;
 - how to handle indirect or historically changing terminology; and
-- how to validate the resulting measure.
+- whether and how to check the resulting measure.
 
 Energy may be discussed as a matter of supply, prices, national security,
 industrial policy, conservation, or environmental transition. References to
 oil, gas, coal, nuclear power, electricity, or renewable energy may therefore
 fall inside or outside the concept depending on the group's definition. Treat
 these choices as measurement problems rather than merely technical problems.
+
+Checking your measure is optional. If you do check it, keep it small: read a
+short sample of coded text, or look at a few years you have priors about. The
+session is short, and a quick look is worth more here than an exhaustive audit.
+Do not spend the time building validation machinery or iterating rules against
+samples.
 
 ## Required outputs
 
@@ -105,7 +111,6 @@ A successful submission:
 - measures the same substantive quantity in every year;
 - follows the required file format;
 - explains the group's analytical choices;
-- reports at least one substantive validation check; and
 - acknowledges important limitations; and
 - reflects on the advantages and disadvantages of using a coding agent.
 
@@ -117,7 +122,5 @@ A successful submission:
   missing references to particular fuels, electricity, or conservation.
 - **An inconsistent denominator:** the measure changes from word share to
   sentence share across years.
-- **Uninspected output:** plausible-looking estimates are accepted without
-  examining the underlying text.
 - **A malformed submission:** years are missing, estimates fall outside
   0--1, or the CSV contains additional columns.
