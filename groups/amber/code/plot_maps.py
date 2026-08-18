@@ -67,8 +67,29 @@ for row, (mname, XY) in enumerate(maps):
         ax.set_xlim(xlim[0] - padx, xlim[1] + padx); ax.set_ylim(ylim[0] - pady, ylim[1] + pady)
         ax.set_aspect("equal")
 
+    sec = en & np.isin(clus, [2, 3])   # energy sentences inside Cold War / War regions
+    eco = en & ~np.isin(clus, [2, 3])
     axA.scatter(XY[~en, 0], XY[~en, 1], s=2.4, c=MUTED, alpha=0.16, lw=0, rasterized=True)
-    axA.scatter(XY[en, 0], XY[en, 1], s=7, c=S2, alpha=0.85, lw=0)
+    axA.scatter(XY[eco, 0], XY[eco, 1], s=7, c=S2, alpha=0.85, lw=0)
+    axA.scatter(XY[sec, 0], XY[sec, 1], s=16, c=S2, alpha=0.95, lw=0.9, edgecolors=INK)
+
+    def densest(pts):
+        d = np.linalg.norm(pts[:, None, :] - pts[None, :, :], axis=2)
+        r = 0.05 * (pts[:, 0].max() - pts[:, 0].min() + 1e-9)
+        return pts[np.argmax((d < max(r, 1e-9)).sum(1))]
+
+    def callout(ax, anchor, label, off):
+        sx = ax.get_xlim()[1] - ax.get_xlim()[0]; sy = ax.get_ylim()[1] - ax.get_ylim()[0]
+        ax.annotate(label, anchor, (anchor[0] + off[0] * sx, anchor[1] + off[1] * sy),
+                    fontsize=9.5, fontweight="bold", color="#b34a1d", ha="center", zorder=7,
+                    arrowprops=dict(arrowstyle="->", color="#b34a1d", lw=1.1,
+                                    shrinkB=4, connectionstyle="arc3,rad=0.15"),
+                    bbox=dict(facecolor=SURFACE, edgecolor="#b34a1d", lw=0.8,
+                              alpha=0.94, boxstyle="round,pad=0.3"))
+    offs = [((-0.10, -0.34), (-0.07, 0.25)),  # t-SNE: (eco), (sec)
+            ((0.00, 0.30), (0.20, -0.26))]    # UMAP
+    callout(axA, densest(XY[eco]), "energy as economics & technology\n(oil prices, power, clean energy)", offs[row][0])
+    callout(axA, densest(XY[sec]), "energy as security\n(atomic diplomacy 1946–55, oil dependence)", offs[row][1])
     cents = {k: (np.median(XY[clus == k, 0]), np.median(XY[clus == k, 1])) for k in NAMES}
     span_x = xlim[1] - xlim[0]
     placed = nudge(cents, min_dx=0.30 * span_x, min_dy=0.055 * (ylim[1] - ylim[0]))
