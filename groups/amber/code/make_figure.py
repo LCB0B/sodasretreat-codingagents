@@ -17,13 +17,16 @@ S1, S2, S3 = "#2a78d6", "#eb6834", "#1baf7a"  # embedding, dictionary, LLM label
 
 series = list(csv.DictReader(open(os.path.join(W, "embedding_series.csv"))))
 years = [int(r["year"]) for r in series]
-est = [float(r["estimate"]) for r in series]
+emb = [float(r["estimate"]) for r in series]
 dic = {int(r["year"]): float(r["estimate"]) for r in csv.DictReader(open(os.path.join(W, "dictionary_results.csv")))}
+abb = {int(r["year"]): float(r["estimate"]) for r in csv.DictReader(open(os.path.join(W, "abbas", "results.csv")))}
+med = {int(r["year"]): float(r["estimate"]) for r in csv.DictReader(open(os.path.join(W, "median_series.csv")))}
 labels = json.load(open(os.path.join(W, "llm_labels.json")))
 ntot = {}
 for r in csv.DictReader(open(os.path.join(W, "embedding_index.csv"))):
     ntot[int(r["year"])] = ntot.get(int(r["year"]), 0) + 1
 llm = {int(y): len(ids) / ntot[int(y)] for y, ids in labels.items()}
+est = [med[y] for y in years]
 
 scores = list(csv.DictReader(open(os.path.join(W, "embedding_scores.csv"))))
 sy = np.array([int(r["year"]) for r in scores])
@@ -43,17 +46,21 @@ fig.patch.set_facecolor(SURFACE)
 
 # ---- top: annual series ----
 ax1.set_facecolor(SURFACE)
-ax1.plot(sorted(dic), [dic[y] for y in sorted(dic)], lw=1.4, color=S2, alpha=0.9, zorder=2)
+S4, S5 = "#eda100", "#e87ba4"
+ax1.plot(sorted(abb), [abb[y] for y in sorted(abb)], lw=1.1, color=S2, alpha=0.85, zorder=2)
+ax1.plot(sorted(dic), [dic[y] for y in sorted(dic)], lw=1.1, color=S3, alpha=0.85, zorder=2)
 ly = sorted(llm)
-ax1.plot(ly, [llm[y] for y in ly], lw=1.4, color=S3, alpha=0.9, zorder=2)
-ax1.plot(years, est, lw=2.2, color=S1, zorder=3,
+ax1.plot(ly, [llm[y] for y in ly], lw=1.1, color=S4, alpha=0.85, zorder=2)
+ax1.plot(years, emb, lw=1.1, color=S5, alpha=0.85, zorder=2)
+ax1.plot(years, est, lw=2.4, color=S1, zorder=3,
          marker="o", ms=3.5, markerfacecolor=S1, markeredgecolor=SURFACE, markeredgewidth=0.6)
 
-# direct labels for the three series (right edge, staggered) + legend
-ax1.legend(["Dictionary (era-aware keywords)", "LLM sentence labels", "Embedding axis (primary)"],
+ax1.legend(["Clause classifier (word share)", "Dictionary (era-aware keywords)",
+            "LLM sentence labels", "Embedding axis (CAV)",
+            "Median of the four (submitted)"],
            loc="upper right", frameon=False, fontsize=9, labelcolor=INK2)
 
-events = [(1974.5, 0.245, "1973–74 OPEC embargo\n(1975 peak: 23% of sentences)", "center"),
+events = [(1974.5, 0.248, "1973–74 OPEC embargo\n(1975 peak: 24% of the address)", "center"),
           (1980, 0.138, "1979–80 second oil shock,\nCarter Doctrine", "left"),
           (2006, 0.062, "“addicted to oil”", "right"),
           (2012.6, 0.098, "all-of-the-above /\nclean-energy push", "left"),
@@ -62,7 +69,7 @@ for x, y, txt, ha in events:
     ax1.annotate(txt, (x, y), fontsize=8.2, color=INK2, ha=ha, va="bottom", linespacing=1.25,
                  bbox=dict(facecolor=SURFACE, edgecolor="none", alpha=0.85, pad=1.5))
 
-ax1.set_ylabel("Share of sentences about energy", fontsize=10)
+ax1.set_ylabel("Share of the address about energy", fontsize=10)
 ax1.yaxis.set_major_formatter(PercentFormatter(xmax=1, decimals=0))
 ax1.set_ylim(0, 0.27)
 ax1.grid(axis="y", color=GRID, lw=0.7)
@@ -72,8 +79,9 @@ for s in ("top", "right", "left"):
 ax1.tick_params(length=0)
 ax1.set_title("Presidential attention to energy, State of the Union addresses 1946–2020",
               fontsize=13.5, loc="left", pad=26, fontweight="bold")
-ax1.text(0, 1.045, "Three independent measures of the same construct; the embedding measure projects each of 20,813 sentences "
-                   "on a learned energy axis (TCAV-style)", transform=ax1.transAxes, fontsize=9.5, color=INK2, va="top")
+ax1.text(0, 1.045, "Submitted estimate = per-year median of four independent measures (pairwise r = 0.93–0.98); "
+                   "the embedding measure projects each of 20,813 sentences on a learned energy axis (TCAV-style)",
+         transform=ax1.transAxes, fontsize=9.5, color=INK2, va="top")
 
 # ---- bottom: sentence projections (mechanism) ----
 ax2.set_facecolor(SURFACE)
